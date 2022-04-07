@@ -161,3 +161,31 @@ const findTotal=(totalVal, dailyVal)=>{
   
    // UC 10 : Objects
 console.log("UC 10 Showing Daily Hours Worked and Wage Earned: "+empDailyHrsAndWageArr);
+
+//UC11-Object Operations using arrow functions
+
+
+totalWages= empDailyHrsAndWageArr
+.filter(dailyHrsAndWage => dailyHrsAndWage.dailyWage>0)
+.reduce((totalWage,dailyHrsAndWage)=>totalWage+=dailyHrsAndWage.dailyWage,0);
+
+totalHours= empDailyHrsAndWageArr
+.filter(dailyHrsAndWage => dailyHrsAndWage.dailyWage>0)
+.reduce((totalHours,dailyHrsAndWage)=>totalHours+=dailyHrsAndWage.dailyHours,0);
+
+console.log("UC 11A Total Hours: "+totalHours+" Tottal Wages: "+totalWages);
+
+console.log("UC-11B Logging Full Work Days");
+let fullWorkingDayStrArr = empDailyHrsAndWageArr.filter(dailyHrsAndWage => dailyHrsAndWage.dailyHours == 8)
+           .forEach(dailyHrsAndWage => console.log(dailyHrsAndWage.toString()));
+
+
+let partWorkingDayStrArr = empDailyHrsAndWageArr
+           .filter(dailyHrsAndWage => dailyHrsAndWage.dailyHours == 4)
+           .map(dailyHrsAndWage => dailyHrsAndWage.toString());
+console.log("UC-11C Part Working Days: "+partWorkingDayStrArr);
+
+let nonWorkingDayStrArr = empDailyHrsAndWageArr
+          .filter(dailyHrsAndWage => dailyHrsAndWage.dailyHours == 0)
+          .map(dailyHrsAndWage => dailyHrsAndWage.dayNum);
+console.log("UC-11D Non Working Days: "+nonWorkingDayStrArr);
