@@ -159,4 +159,5 @@ const findTotal=(totalVal, dailyVal)=>{
   console.log("Part Working Days: "+partWorkingDays);
   console.log("Non Working Days: "+nonWorkingDays);
   
-   
+   // UC 10 : Objects
+console.log("UC 10 Showing Daily Hours Worked and Wage Earned: "+empDailyHrsAndWageArr);
